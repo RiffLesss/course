@@ -6,13 +6,14 @@
         {% for event in events %}
         <div class="row event">
             <div class="col-sm">
-                <h3>{{ event.name }}</h3>
+                <a href="/event/{{ event.id }}"><h3>{{ event.name }}</h3></a>
             </div>
             <div class="col-sm">
-                <p>Ends at {{ event.end_time }}</p>
+                <p>Registration ends at {{ event.end_time }}</p>
             </div>
             <div class="col-sm">
-                <a class="btn btn-sm btn-block">Sign in</a>
+                <a class="btn btn-sm btn-info" href="{% url 'event' event.id %}">About</a>
+                <a class="btn btn-sm btn-success" href="{% url 'event' event.id %}">Register</a>
             </div>
         </div>
         {% endfor %}

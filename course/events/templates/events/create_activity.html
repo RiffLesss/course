@@ -1,0 +1,12 @@
+{% extends 'events/main.html' %}
+
+{% block content %}
+    <h2 class="title"New activity</h2>
+    <div class="container">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form }}
+          <input type="submit" name="Submit">
+        </form>
+    </div>
+{% endblock %}

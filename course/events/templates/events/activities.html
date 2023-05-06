@@ -1,18 +1,23 @@
 {% extends 'events/main.html' %}
 
 {% block content %}
-    <h2 class="title">{{ activities.event }}</h2>
+    <h2 class="title">{{ event.name }}</h2>
     <div class="container">
+        {% for activity in activities %}
         <div class="row event">
             <div class="col-sm">
-                <h3>{{ activities.name }}</h3>
+                <h3>{{ activity.name }}</h3>
             </div>
             <div class="col-sm">
-                <p>Spots left {{ spots_left }}</p>
+                <p>Total spots {{ activity.spots }}</p>
             </div>
             <div class="col-sm">
-                <a class="btn btn-sm btn-block">Sign in</a>
+                <p>Spots taken {{ activity.spots_taken }}</p>
+            </div>
+            <div class="col-sm">
+                <a class="btn btn-sm btn-block">Register</a>
             </div>
         </div>
+        {% endfor %}
     </div>
 {% endblock %}
