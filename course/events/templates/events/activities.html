@@ -1,20 +1,18 @@
 {% extends 'events/main.html' %}
 
 {% block content %}
-    <h2 class="title">Events</h2>
+    <h2 class="title">{{ activities.event }}</h2>
     <div class="container">
-        {% for event in events %}
         <div class="row event">
             <div class="col-sm">
-                <h3>{{ event.name }}</h3>
+                <h3>{{ activities.name }}</h3>
             </div>
             <div class="col-sm">
-                <p>Ends at {{ event.end_time }}</p>
+                <p>Spots left {{ spots_left }}</p>
             </div>
             <div class="col-sm">
                 <a class="btn btn-sm btn-block">Sign in</a>
             </div>
         </div>
-        {% endfor %}
     </div>
 {% endblock %}
