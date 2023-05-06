@@ -4,16 +4,23 @@
     <h2 class="title">Events</h2>
     <div class="container">
         {% for event in events %}
-        <div class="row event">
-            <div class="col-sm">
-                <a href="/event/{{ event.id }}"><h3>{{ event.name }}</h3></a>
+        <div class="row event card card-body">
+            <div class="col">
+                <div class="col-sm">
+                    <h3>{{ event.name }}</h3>
+                </div>
+                <div class="col-sm">
+                    <p>Registration ends at {{ event.end_time }}</p>
+                </div>
+                <div class="row buttons">
+                    <div class="col-sm">
+                        <a class="btn btn-sm btn-success" href="{% url 'event' event.id %}">Register</a>
+                        <a class="btn btn-sm btn-danger" href="{% url 'delete_event' event.id %}">Delete</a>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm">
-                <p>Registration ends at {{ event.end_time }}</p>
-            </div>
-            <div class="col-sm">
-                <a class="btn btn-sm btn-info" href="{% url 'event' event.id %}">About</a>
-                <a class="btn btn-sm btn-success" href="{% url 'event' event.id %}">Register</a>
+            <div class="row">
+                <p>Description: {{ event.about }}</p>
             </div>
         </div>
         {% endfor %}
