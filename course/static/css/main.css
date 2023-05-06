@@ -1,0 +1,10 @@
+.event {
+    border: 1px solid black;
+    margin-bottom: 15px
+}
+
+.title {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px
+}
