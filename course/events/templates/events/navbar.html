@@ -23,7 +23,7 @@
     </ul>
   </div>
   <span>
-    {{ request.user }}
+    {{ request.user.first_name }}
   </span>
   <span>
     <a class="btn" href="{% url 'logout' %}">Log Out</a>

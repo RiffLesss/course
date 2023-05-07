@@ -15,6 +15,7 @@
                 <div class="row buttons">
                     <div class="col-sm">
                         <a class="btn btn-sm btn-success" href="{% url 'event' event.id %}">Register</a>
+                        <a class="btn btn-sm btn-warning" href="{% url 'update_event' event.id %}">Update</a>
                         <a class="btn btn-sm btn-danger" href="{% url 'delete_event' event.id %}">Delete</a>
                     </div>
                 </div>
